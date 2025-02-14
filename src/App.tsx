@@ -9,6 +9,7 @@ import ChiSiamo from "./pages/ChiSiamo";
 import Servizi from "./pages/Servizi";
 import Climatizzatori from "./pages/services/Climatizzatori";
 import Termoidraulica from "./pages/services/Termoidraulica";
+import Caldaie from "./pages/services/Caldaie";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,9 +26,9 @@ const App = () => (
           <Route path="/servizi" element={<Servizi />} />
           <Route path="/servizi/climatizzatori" element={<Climatizzatori />} />
           <Route path="/servizi/termoidraulica" element={<Termoidraulica />} />
+          <Route path="/caldaie" element={<Caldaie />} />
           <Route path="/servizi/addolcitori" element={<NotFound />} />
           <Route path="/servizi/ristrutturazione-bagni" element={<NotFound />} />
-          <Route path="/caldaie" element={<NotFound />} />
           <Route path="/incentivi" element={<NotFound />} />
           <Route path="/contatti" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
