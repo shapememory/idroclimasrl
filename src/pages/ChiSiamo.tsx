@@ -1,5 +1,6 @@
+
 import Navbar from "../components/Navbar";
-import { Award, Users, Target, Building2 } from "lucide-react";
+import { Users, Target, Building2, Award, Facebook, MessageCircle, Phone, Mail } from "lucide-react";
 
 const ChiSiamo = () => {
   return (
@@ -78,21 +79,15 @@ const ChiSiamo = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             {/* Company Info */}
             <div>
-              <div className="mb-4">
-                <img 
-                  src="/lovable-uploads/88ba3752-3de0-426e-92d0-a34661ac2026.png" 
-                  alt="Idroclima SRL Logo" 
-                  className="h-12 w-auto filter brightness-0 invert"
-                />
-              </div>
+              <h3 className="text-lg font-semibold mb-4">Azienda</h3>
               <p className="text-gray-400 mb-4">
-                Via Antonio Salieri<br />
-                37135 Verona VR<br />
-                P.IVA: 12345678901<br />
-                REA: VR-123456
+                IDROCLIMA SRL<br />
+                via Lugagnano 17/B<br />
+                37066 Sommacampagna (VR)<br />
+                P.IVA 04705490235
               </p>
               <a 
                 href="/contatti"
@@ -155,28 +150,29 @@ const ChiSiamo = () => {
               <ul className="space-y-2">
                 <li>
                   <a 
-                    href="tel:+391234567890" 
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                    href="tel:+390458582372" 
+                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
                   >
-                    Tel: +39 123 456 7890
+                    <Phone className="w-4 h-4" />
+                    +39 045 8582372
                   </a>
                 </li>
                 <li>
                   <a 
-                    href="mailto:info@example.com" 
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                    href="https://wa.me/393406878511" 
+                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
                   >
-                    Email: info@example.com
+                    <MessageCircle className="w-4 h-4" />
+                    +39 340 687 8511
                   </a>
                 </li>
                 <li>
                   <a 
-                    href="https://wa.me/391234567890"
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                    href="mailto:info@idroclimaverona.it" 
+                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
                   >
-                    WhatsApp: +39 123 456 7890
+                    <Mail className="w-4 h-4" />
+                    info@idroclimaverona.it
                   </a>
                 </li>
               </ul>
@@ -193,6 +189,29 @@ const ChiSiamo = () => {
                 <li className="text-gray-400">Domenica:</li>
                 <li className="text-gray-400">Chiuso</li>
               </ul>
+            </div>
+
+            {/* Social */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Social</h3>
+              <div className="flex gap-4">
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <Facebook className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://wa.me/393406878511" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <MessageCircle className="w-6 h-6" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -217,6 +236,18 @@ const ChiSiamo = () => {
           </div>
         </div>
       </footer>
+
+      {/* WhatsApp Widget */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <a
+          href="https://wa.me/393406878511"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </a>
+      </div>
     </div>
   );
 };
