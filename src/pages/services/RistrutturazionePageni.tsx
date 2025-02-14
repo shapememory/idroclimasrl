@@ -1,6 +1,6 @@
 
 import ServicesLayout from "../../components/ServicesLayout";
-import { Tool, Ruler, Palette, Bath, Brush, Building2 } from "lucide-react";
+import { Wrench, Ruler, Palette, Bath, Brush, Building2 } from "lucide-react";
 
 const RistrutturazionePageni = () => {
   return (
@@ -127,7 +127,7 @@ const services = [
   {
     title: "Demolizione",
     description: "Rimozione professionale di vecchi sanitari, piastrelle e impianti.",
-    icon: <Tool className="w-6 h-6 text-primary" />,
+    icon: <Wrench className="w-6 h-6 text-primary" />,
   },
   {
     title: "Impiantistica",
@@ -174,7 +174,7 @@ const features = [
   {
     title: "Qualità Garantita",
     description: "Utilizziamo solo materiali e prodotti certificati delle migliori marche.",
-    icon: <Tool className="w-6 h-6 text-primary" />,
+    icon: <Wrench className="w-6 h-6 text-primary" />,
   },
   {
     title: "Tempistiche Certe",
