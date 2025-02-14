@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { ArrowRight, Droplet, Wrench } from "lucide-react";
+import { ArrowRight, Droplet, Wrench, ThermometerSun, Building2, Clock, Award } from "lucide-react";
 
 const Index = () => {
   return (
@@ -205,22 +205,40 @@ const Index = () => {
 
 const services = [
   {
-    title: "Caldaie e Riscaldamento",
-    description: "Installazione e manutenzione di sistemi di riscaldamento moderni ed efficienti",
+    title: "Climatizzazione",
+    description: "Soluzioni complete per il comfort climatico della tua casa",
+    icon: <ThermometerSun className="w-6 h-6 text-primary" />,
+    path: "/servizi/climatizzatori",
+  },
+  {
+    title: "Termoidraulica",
+    description: "Servizi professionali per tutti i tuoi impianti idraulici",
     icon: <Wrench className="w-6 h-6 text-primary" />,
+    path: "/servizi/termoidraulica",
+  },
+  {
+    title: "Caldaie",
+    description: "Installazione e manutenzione di sistemi di riscaldamento moderni ed efficienti",
+    icon: <Droplet className="w-6 h-6 text-primary" />,
     path: "/caldaie",
   },
   {
-    title: "Climatizzazione",
-    description: "Soluzioni complete per il comfort climatico della tua casa",
-    icon: <Droplet className="w-6 h-6 text-primary" />,
-    path: "/climatizzazione",
+    title: "Ristrutturazione Bagni",
+    description: "Rinnova il tuo bagno con soluzioni moderne e funzionali",
+    icon: <Building2 className="w-6 h-6 text-primary" />,
+    path: "/servizi/ristrutturazione-bagni",
   },
   {
-    title: "Idraulica",
-    description: "Servizi professionali per tutti i tuoi bisogni idraulici",
-    icon: <Wrench className="w-6 h-6 text-primary" />,
-    path: "/idraulica",
+    title: "Pronto Intervento",
+    description: "Servizio di emergenza 24/7 per ogni necessità",
+    icon: <Clock className="w-6 h-6 text-primary" />,
+    path: "/contatti",
+  },
+  {
+    title: "Richiesta Incentivi",
+    description: "Supporto completo per accedere agli incentivi statali",
+    icon: <Award className="w-6 h-6 text-primary" />,
+    path: "/incentivi",
   },
 ];
 
