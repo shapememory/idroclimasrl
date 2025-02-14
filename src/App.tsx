@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ChiSiamo from "./pages/ChiSiamo";
 import Servizi from "./pages/Servizi";
+import Climatizzatori from "./pages/services/Climatizzatori";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,7 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/chi-siamo" element={<ChiSiamo />} />
           <Route path="/servizi" element={<Servizi />} />
-          <Route path="/servizi/climatizzatori" element={<NotFound />} />
+          <Route path="/servizi/climatizzatori" element={<Climatizzatori />} />
           <Route path="/servizi/termoidraulica" element={<NotFound />} />
           <Route path="/servizi/addolcitori" element={<NotFound />} />
           <Route path="/servizi/ristrutturazione-bagni" element={<NotFound />} />
