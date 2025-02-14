@@ -88,14 +88,14 @@ const Contatti = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+391234567890"
+                href="tel:+390458582372"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors duration-200"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Chiama Ora
               </a>
               <a 
-                href="https://wa.me/391234567890"
+                href="https://wa.me/393406878511"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#25D366] hover:bg-[#25D366]/90 transition-colors duration-200"
@@ -104,7 +104,7 @@ const Contatti = () => {
                 WhatsApp
               </a>
               <a 
-                href="mailto:info@example.com"
+                href="mailto:info@idroclimaverona.it"
                 className="inline-flex items-center justify-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary bg-white hover:bg-primary/5 transition-colors duration-200"
               >
                 <Mail className="w-5 h-5 mr-2" />
@@ -112,17 +112,6 @@ const Contatti = () => {
               </a>
             </div>
           </div>
-
-          {/* Fixed WhatsApp Button */}
-          <a
-            href="https://wa.me/391234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#25D366]/90 transition-colors duration-200"
-            aria-label="Contattaci su WhatsApp"
-          >
-            <MessageCircle className="w-6 h-6" />
-          </a>
         </div>
       </section>
     </ServicesLayout>
@@ -146,7 +135,7 @@ const contactInfo = [
       { text: "info@example.com", link: "mailto:info@example.com" },
       { 
         text: "Scrivici su WhatsApp", 
-        link: "https://wa.me/391234567890",
+        link: "https://wa.me/393406878511",
         newTab: true 
       },
     ],
