@@ -1,3 +1,4 @@
+
 import Navbar from "./Navbar";
 
 interface ServicesLayoutProps {
@@ -39,7 +40,7 @@ const ServicesLayout = ({ children, title, description }: ServicesLayoutProps) =
                 <img 
                   src="/lovable-uploads/88ba3752-3de0-426e-92d0-a34661ac2026.png" 
                   alt="Idroclima SRL Logo" 
-                  className="h-12 w-auto"
+                  className="h-12 w-auto filter brightness-0 invert"
                 />
               </div>
               <p className="text-gray-400 mb-4">
