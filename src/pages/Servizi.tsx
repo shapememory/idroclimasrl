@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import ServicesLayout from "../components/ServicesLayout";
-import { Wrench, Thermometer, Droplet, Building2, Tool, Award } from "lucide-react";
+import { Wrench, Thermometer, Droplet, Building2, Award } from "lucide-react";
 
 const Servizi = () => {
   return (
@@ -49,7 +49,7 @@ const services = [
   {
     title: "Caldaie",
     description: "Installazione e manutenzione di caldaie moderne ed efficienti",
-    icon: <Tool className="w-6 h-6 text-primary" />,
+    icon: <Wrench className="w-6 h-6 text-primary" />,
     path: "/caldaie",
   },
   {
