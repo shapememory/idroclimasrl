@@ -111,20 +111,20 @@ const Index = () => {
                 </li>
                 <li>
                   <a 
+                    href="https://wa.me/393406878511" 
+                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    +39 340 687 8511
+                  </a>
+                </li>
+                <li>
+                  <a 
                     href="mailto:info@idroclimaverona.it" 
                     className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
                   >
                     <Mail className="w-4 h-4" />
                     info@idroclimaverona.it
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="mailto:amministrazione@idroclimaverona.it" 
-                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
-                  >
-                    <Mail className="w-4 h-4" />
-                    amministrazione@idroclimaverona.it
                   </a>
                 </li>
               </ul>
@@ -156,7 +156,7 @@ const Index = () => {
                   <Facebook className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://wa.me/390458582372" 
+                  href="https://wa.me/393406878511" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-gray-400 hover:text-white transition-colors duration-200"
