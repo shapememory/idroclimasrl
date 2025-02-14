@@ -1,6 +1,5 @@
-
 import ServicesLayout from "../../components/ServicesLayout";
-import { Droplet, Filter, Gauge, Wave, Settings, ShieldCheck } from "lucide-react";
+import { Droplet, Filter, Gauge, Waves, Settings, ShieldCheck } from "lucide-react";
 
 const Addolcitori = () => {
   return (
@@ -114,7 +113,7 @@ const services = [
   {
     title: "Analisi Acqua",
     description: "Analisi professionale della durezza e qualità dell'acqua per identificare la soluzione ideale.",
-    icon: <Wave className="w-6 h-6 text-primary" />,
+    icon: <Waves className="w-6 h-6 text-primary" />,
   },
   {
     title: "Installazione",
