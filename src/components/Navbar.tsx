@@ -1,9 +1,17 @@
 
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,15 +37,49 @@ const Navbar = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            {navItems.map(item => (
-              <Link 
-                key={item.text} 
-                to={item.href} 
-                className="text-gray-600 hover:text-primary transition-colors duration-200 text-lg font-medium"
-              >
-                {item.text}
-              </Link>
-            ))}
+            <Link 
+              to="/" 
+              className="text-gray-600 hover:text-primary transition-colors duration-200 text-lg font-medium"
+            >
+              Home
+            </Link>
+            <Link 
+              to="/chi-siamo" 
+              className="text-gray-600 hover:text-primary transition-colors duration-200 text-lg font-medium"
+            >
+              Chi Siamo
+            </Link>
+            
+            {/* Services Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-lg font-medium">
+                    Servizi
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[240px] p-3 bg-white">
+                      {serviceItems.map((service) => (
+                        <Link
+                          key={service.href}
+                          to={service.href}
+                          className="block px-4 py-2 text-sm hover:bg-gray-100 rounded-md text-gray-700 hover:text-primary transition-colors"
+                        >
+                          {service.text}
+                        </Link>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            <Link 
+              to="/contatti" 
+              className="text-gray-600 hover:text-primary transition-colors duration-200 text-lg font-medium"
+            >
+              Contatti
+            </Link>
           </div>
 
           {/* Mobile Navigation Toggle */}
@@ -56,27 +98,54 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       <div className={cn("md:hidden", isOpen ? "block" : "hidden")}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
-          {navItems.map(item => (
-            <Link 
-              key={item.text} 
-              to={item.href} 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors duration-200" 
-              onClick={() => isMobile && setIsOpen(false)}
-            >
-              {item.text}
-            </Link>
-          ))}
+          <Link 
+            to="/"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors duration-200"
+            onClick={() => isMobile && setIsOpen(false)}
+          >
+            Home
+          </Link>
+          <Link 
+            to="/chi-siamo"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors duration-200"
+            onClick={() => isMobile && setIsOpen(false)}
+          >
+            Chi Siamo
+          </Link>
+          <div className="px-3 py-2">
+            <div className="font-medium text-gray-600">Servizi</div>
+            <div className="pl-4 space-y-1 mt-2">
+              {serviceItems.map((service) => (
+                <Link
+                  key={service.href}
+                  to={service.href}
+                  className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors duration-200"
+                  onClick={() => isMobile && setIsOpen(false)}
+                >
+                  {service.text}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <Link 
+            to="/contatti"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors duration-200"
+            onClick={() => isMobile && setIsOpen(false)}
+          >
+            Contatti
+          </Link>
         </div>
       </div>
     </nav>
   );
 };
 
-const navItems = [
-  { text: "Home", href: "/" },
-  { text: "Chi Siamo", href: "/chi-siamo" },
-  { text: "Servizi", href: "/servizi" },
-  { text: "Contatti", href: "/contatti" }
+const serviceItems = [
+  { text: "Climatizzatori", href: "/servizi/climatizzatori" },
+  { text: "Termoidraulica", href: "/servizi/termoidraulica" },
+  { text: "Caldaie", href: "/caldaie" },
+  { text: "Addolcitori", href: "/servizi/addolcitori" },
+  { text: "Ristrutturazione Bagni", href: "/servizi/ristrutturazione-bagni" },
 ];
 
 export default Navbar;
