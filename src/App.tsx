@@ -12,6 +12,7 @@ import Termoidraulica from "./pages/services/Termoidraulica";
 import Caldaie from "./pages/services/Caldaie";
 import Addolcitori from "./pages/services/Addolcitori";
 import RistrutturazionePageni from "./pages/services/RistrutturazionePageni";
+import Incentivi from "./pages/services/Incentivi";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,7 +32,7 @@ const App = () => (
           <Route path="/caldaie" element={<Caldaie />} />
           <Route path="/servizi/addolcitori" element={<Addolcitori />} />
           <Route path="/servizi/ristrutturazione-bagni" element={<RistrutturazionePageni />} />
-          <Route path="/incentivi" element={<NotFound />} />
+          <Route path="/incentivi" element={<Incentivi />} />
           <Route path="/contatti" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
