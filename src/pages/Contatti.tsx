@@ -1,6 +1,6 @@
 
 import ServicesLayout from "../components/ServicesLayout";
-import { MapPin, Phone, Mail, Clock, Building } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Building, MessageCircle } from "lucide-react";
 
 const Contatti = () => {
   return (
@@ -28,6 +28,8 @@ const Contatti = () => {
                       <a 
                         href={item.link} 
                         className="hover:text-primary transition-colors duration-200"
+                        target={item.newTab ? "_blank" : undefined}
+                        rel={item.newTab ? "noopener noreferrer" : undefined}
                       >
                         {item.text}
                       </a>
@@ -89,16 +91,38 @@ const Contatti = () => {
                 href="tel:+391234567890"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors duration-200"
               >
+                <Phone className="w-5 h-5 mr-2" />
                 Chiama Ora
+              </a>
+              <a 
+                href="https://wa.me/391234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#25D366] hover:bg-[#25D366]/90 transition-colors duration-200"
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                WhatsApp
               </a>
               <a 
                 href="mailto:info@example.com"
                 className="inline-flex items-center justify-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary bg-white hover:bg-primary/5 transition-colors duration-200"
               >
+                <Mail className="w-5 h-5 mr-2" />
                 Invia Email
               </a>
             </div>
           </div>
+
+          {/* Fixed WhatsApp Button */}
+          <a
+            href="https://wa.me/391234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#25D366]/90 transition-colors duration-200"
+            aria-label="Contattaci su WhatsApp"
+          >
+            <MessageCircle className="w-6 h-6" />
+          </a>
         </div>
       </section>
     </ServicesLayout>
@@ -120,6 +144,11 @@ const contactInfo = [
     items: [
       { text: "+39 123 456 7890", link: "tel:+391234567890" },
       { text: "info@example.com", link: "mailto:info@example.com" },
+      { 
+        text: "Scrivici su WhatsApp", 
+        link: "https://wa.me/391234567890",
+        newTab: true 
+      },
     ],
   },
   {
