@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { ArrowRight, Droplet, Wrench, ThermometerSun, Building2, Clock, Award } from "lucide-react";
+
 const Index = () => {
   return <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <Navbar />
@@ -51,8 +52,9 @@ const Index = () => {
             {/* Company Info */}
             <div>
               <div className="mb-4">
-                
+                <img alt="Idroclima SRL Logo" className="h-12 w-auto filter brightness-0 invert" src="/lovable-uploads/35c7e76a-1fd6-4ee3-8950-329444906c10.png" />
               </div>
+              <h3 className="text-lg font-semibold mb-4">Azienda</h3>
               <p className="text-gray-400 mb-4">
                 IDROCLIMA SRL<br />
                 via Lugagnano 17/B<br />
@@ -149,6 +151,7 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 const services = [{
   title: "Climatizzazione",
   description: "Soluzioni complete per il comfort climatico della tua casa",
@@ -180,4 +183,5 @@ const services = [{
   icon: <Award className="w-6 h-6 text-primary" />,
   path: "/incentivi"
 }];
+
 export default Index;

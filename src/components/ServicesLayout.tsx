@@ -39,6 +39,7 @@ const ServicesLayout = ({ children, title, description }: ServicesLayoutProps) =
               <div className="mb-4">
                 <img alt="Idroclima SRL Logo" className="h-12 w-auto filter brightness-0 invert" src="/lovable-uploads/35c7e76a-1fd6-4ee3-8950-329444906c10.png" />
               </div>
+              <h3 className="text-lg font-semibold mb-4">Azienda</h3>
               <p className="text-gray-400 mb-4">
                 IDROCLIMA SRL<br />
                 via Lugagnano 17/B<br />
