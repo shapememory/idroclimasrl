@@ -36,12 +36,14 @@ const ServicesLayout = ({ children, title, description }: ServicesLayoutProps) =
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Company Info */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">IdroclimaPro</h3>
+              <div className="mb-4">
+                <img alt="Idroclima SRL Logo" className="h-12 w-auto filter brightness-0 invert" src="/lovable-uploads/35c7e76a-1fd6-4ee3-8950-329444906c10.png" />
+              </div>
               <p className="text-gray-400 mb-4">
-                Via Antonio Salieri<br />
-                37135 Verona VR<br />
-                P.IVA: 12345678901<br />
-                REA: VR-123456
+                IDROCLIMA SRL<br />
+                via Lugagnano 17/B<br />
+                37066 Sommacampagna (VR)<br />
+                P.IVA 04705490235
               </p>
               <a 
                 href="/contatti"
@@ -147,7 +149,7 @@ const ServicesLayout = ({ children, title, description }: ServicesLayoutProps) =
 
           {/* Copyright */}
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} IdroclimaPro. Tutti i diritti riservati.</p>
+            <p>&copy; {new Date().getFullYear()} Idroclima SRL. Tutti i diritti riservati.</p>
             <div className="mt-2 space-x-4">
               <a 
                 href="/privacy-policy" 

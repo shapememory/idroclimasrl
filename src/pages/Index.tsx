@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { ArrowRight, Droplet, Wrench, ThermometerSun, Building2, Clock, Award } from "lucide-react";
+
 const Index = () => {
   return <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <Navbar />
@@ -54,10 +55,10 @@ const Index = () => {
                 <img alt="Idroclima SRL Logo" className="h-12 w-auto filter brightness-0 invert" src="/lovable-uploads/35c7e76a-1fd6-4ee3-8950-329444906c10.png" />
               </div>
               <p className="text-gray-400 mb-4">
-                Via Antonio Salieri<br />
-                37135 Verona VR<br />
-                P.IVA: 12345678901<br />
-                REA: VR-123456
+                IDROCLIMA SRL<br />
+                via Lugagnano 17/B<br />
+                37066 Sommacampagna (VR)<br />
+                P.IVA 04705490235
               </p>
               <a href="/contatti" className="text-primary hover:text-primary/80 transition-colors duration-200">
                 Contattaci
@@ -149,6 +150,7 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 const services = [{
   title: "Climatizzazione",
   description: "Soluzioni complete per il comfort climatico della tua casa",
@@ -180,4 +182,5 @@ const services = [{
   icon: <Award className="w-6 h-6 text-primary" />,
   path: "/incentivi"
 }];
+
 export default Index;
