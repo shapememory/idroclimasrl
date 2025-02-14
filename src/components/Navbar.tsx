@@ -1,132 +1,90 @@
 
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import useMobile from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showServicesMenu, setShowServicesMenu] = useState(false);
+  const isMobile = useMobile();
 
-  const menuItems = [
-    { title: "Home", path: "/" },
-    { title: "Chi Siamo", path: "/chi-siamo" },
-    {
-      title: "Servizi",
-      path: "/servizi",
-      submenu: [
-        { title: "Climatizzazione", path: "/servizi/climatizzatori" },
-        { title: "Termoidraulica", path: "/servizi/termoidraulica" },
-        { title: "Caldaie", path: "/caldaie" },
-        { title: "Addolcitori", path: "/servizi/addolcitori" },
-        { title: "Ristrutturazione Bagni", path: "/servizi/ristrutturazione-bagni" },
-        { title: "Richiesta Incentivi", path: "/incentivi" },
-      ],
-    },
-    { title: "Contatti", path: "/contatti" },
-  ];
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <nav className="fixed w-full bg-white/80 backdrop-blur-lg z-50 border-b border-gray-100">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          <Link to="/" className="text-xl font-semibold text-gray-800">
-            IdroclimaPro
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {menuItems.map((item) => (
-              <div key={item.path} className="relative group">
-                {item.submenu ? (
-                  <div
-                    className="flex items-center text-gray-600 hover:text-primary cursor-pointer transition-colors duration-200"
-                    onMouseEnter={() => setShowServicesMenu(true)}
-                    onMouseLeave={() => setShowServicesMenu(false)}
-                  >
-                    {item.title}
-                    <ChevronDown className="ml-1 w-4 h-4" />
-                    {showServicesMenu && (
-                      <div className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 mt-1 animate-fade-in">
-                        {item.submenu.map((subitem) => (
-                          <Link
-                            key={subitem.path}
-                            to={subitem.path}
-                            className="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors duration-200"
-                          >
-                            {subitem.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="text-gray-600 hover:text-primary transition-colors duration-200"
-                  >
-                    {item.title}
-                  </Link>
-                )}
-              </div>
+        <div className="flex justify-between h-16">
+          <div className="flex">
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/959685d8-245c-4f41-b5db-9ad76517f350.png" 
+                alt="Idroclima SRL Logo" 
+                className="h-8 w-auto"
+              />
+            </Link>
+          </div>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.text}
+                to={item.href}
+                className="text-gray-600 hover:text-primary transition-colors duration-200"
+              >
+                {item.text}
+              </Link>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Navigation Toggle */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={toggleMenu}
+              className="text-gray-600 hover:text-gray-900 focus:outline-none"
+            >
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden animate-fade-in">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white/80 backdrop-blur-lg">
-            {menuItems.map((item) => (
-              <div key={item.path}>
-                {item.submenu ? (
-                  <>
-                    <button
-                      onClick={() => setShowServicesMenu(!showServicesMenu)}
-                      className="w-full text-left px-3 py-2 text-gray-600 hover:text-primary transition-colors duration-200 flex items-center justify-between"
-                    >
-                      {item.title}
-                      <ChevronDown className={`w-4 h-4 transform transition-transform duration-200 ${showServicesMenu ? 'rotate-180' : ''}`} />
-                    </button>
-                    {showServicesMenu && (
-                      <div className="pl-4 space-y-1">
-                        {item.submenu.map((subitem) => (
-                          <Link
-                            key={subitem.path}
-                            to={subitem.path}
-                            className="block px-3 py-2 text-gray-600 hover:text-primary transition-colors duration-200"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {subitem.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="block px-3 py-2 text-gray-600 hover:text-primary transition-colors duration-200"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
+      {/* Mobile Navigation Menu */}
+      <div
+        className={cn(
+          "md:hidden",
+          isOpen ? "block" : "hidden"
+        )}
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          {navItems.map((item) => (
+            <Link
+              key={item.text}
+              to={item.href}
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors duration-200"
+              onClick={() => isMobile && setIsOpen(false)}
+            >
+              {item.text}
+            </Link>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };
+
+const navItems = [
+  { text: "Home", href: "/" },
+  { text: "Chi Siamo", href: "/chi-siamo" },
+  { text: "Servizi", href: "/servizi" },
+  { text: "Contatti", href: "/contatti" },
+];
 
 export default Navbar;
