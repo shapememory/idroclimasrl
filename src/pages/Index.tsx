@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { ArrowRight, Droplet, Wrench, ThermometerSun, Building2, Clock, Award } from "lucide-react";
+import { Facebook, MessageCircle, Phone, Mail } from "lucide-react";
 
 const Index = () => {
   return <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
@@ -48,7 +49,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             {/* Company Info */}
             <div>
               <h3 className="text-lg font-semibold mb-4">Azienda</h3>
@@ -100,18 +101,30 @@ const Index = () => {
               <h3 className="text-lg font-semibold mb-4">Contatti</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="tel:+391234567890" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    Tel: +39 123 456 7890
+                  <a 
+                    href="tel:+390458582372" 
+                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
+                  >
+                    <Phone className="w-4 h-4" />
+                    +39 045 8582372
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:info@example.com" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    Email: info@example.com
+                  <a 
+                    href="mailto:info@idroclimaverona.it" 
+                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
+                  >
+                    <Mail className="w-4 h-4" />
+                    info@idroclimaverona.it
                   </a>
                 </li>
                 <li>
-                  <a href="https://wa.me/391234567890" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
-                    WhatsApp: +39 123 456 7890
+                  <a 
+                    href="mailto:amministrazione@idroclimaverona.it" 
+                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
+                  >
+                    <Mail className="w-4 h-4" />
+                    amministrazione@idroclimaverona.it
                   </a>
                 </li>
               </ul>
@@ -128,6 +141,29 @@ const Index = () => {
                 <li className="text-gray-400">Domenica:</li>
                 <li className="text-gray-400">Chiuso</li>
               </ul>
+            </div>
+
+            {/* Social */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Social</h3>
+              <div className="flex gap-4">
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <Facebook className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://wa.me/390458582372" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <MessageCircle className="w-6 h-6" />
+                </a>
+              </div>
             </div>
           </div>
 
